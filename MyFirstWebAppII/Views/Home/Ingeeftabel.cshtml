@@ -3,6 +3,50 @@
 @{
     //ViewData["Title"] = "NieuwPuntentabel";
     Layout = null;
+
+    Dictionary<string, int> aantalLeerlingen = new Dictionary<string, int>()
+    {
+        {"6ITN", 10},
+        {"6OIT", 18},
+        {"6OM", 12},
+        {"6OMT", 10},
+        {"6CM", 10},
+    };
 }
 
-<p>test</p>
+<div>Welke Klas?</div>
+<select>
+    @foreach (KeyValuePair<string, int> kvp in aantalLeerlingen)
+    {
+        <option value="@kvp.Key">@kvp.Key</option>
+    }
+</select>
+
+<div>onderwerp:</div><textarea></textarea>
+<div>max. aantal punten:</div><textarea name="maxPunten"></textarea>
+
+<table>
+    <tr>
+        <th>leerling</th>
+        <th>score</th>
+        <th>maximum</th>
+    </tr>
+    @foreach (KeyValuePair<string, int> kvp in aantalLeerlingen)
+    {
+        <tr>
+            <td></td>
+            <td><input type="text" /></td>
+            <td></td>
+        </tr>
+    }
+
+
+</table>
+
+
+
+
+
+
+
+<button id="btnOpslaan">Opslaan</button>
