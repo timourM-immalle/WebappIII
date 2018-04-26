@@ -1,13 +1,24 @@
 ﻿@page
-@model PuntenIngevenModel
+
 @{
+    //ViewData["Title"] = "PuntenIngeven";
 }
 
-<button id="knop">Nieuwe punten</button>
-<script>
-    var knop = document.getElementById("knop");
-    $("knop").click(function () {
-        //... openen
 
-    });
+<button id="knop" onclick="openen()">Nieuwe punten</button>
+<script>
+    /*var knop = document.getElementById("knop");
+    knop.addEventListener("click", fuction() {
+        window.open("Vieuws/Ingeeftabel.cshtml");
+    });*/
+
+    function openen() {
+        var knop = document.getElementById("knop");
+        window.open("Views\PuntenIngeven");
+    }
+
+    /*$("knop").click(function () {
+        //... openen
+        window.open("Views/Ingeeftabel.cshtml");
+    });*/
 </script>

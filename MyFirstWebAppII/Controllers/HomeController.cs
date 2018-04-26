@@ -33,5 +33,11 @@ namespace MyFirstWebAppII.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult PuntenIngeven()
+        {
+            ViewData["Message"] = "Punten ingeven?";
+            return View();
+        }
     }
 }
