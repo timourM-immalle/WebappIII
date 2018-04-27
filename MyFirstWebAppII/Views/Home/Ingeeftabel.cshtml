@@ -13,9 +13,9 @@
         {"6CM", 10},
     };
 }
-
+<!--model voor communicatie met database-->
 <div>Welke Klas?</div>
-<select>
+<select id="geselecteerdeKlas">
     @foreach (KeyValuePair<string, int> kvp in aantalLeerlingen)
     {
         <option value="@kvp.Key">@kvp.Key</option>
@@ -23,7 +23,7 @@
 </select>
 
 <div>onderwerp:</div><textarea></textarea>
-<div>max. aantal punten:</div><textarea name="maxPunten"></textarea>
+<div>max. aantal punten:</div><textarea id="maxPunten"></textarea>
 
 <table>
     <tr>
@@ -31,12 +31,12 @@
         <th>score</th>
         <th>maximum</th>
     </tr>
-    @foreach (KeyValuePair<string, int> kvp in aantalLeerlingen)
+    @foreach (KeyValuePair<string, int> kvp in aantalLeerlingen)//Juist? Nee, lln moeten uit database gehaald worden
     {
         <tr>
             <td></td>
             <td><input type="text" /></td>
-            <td></td><!--Hoe kan ik hier de inhoud vavn maxPunten opvragen?-->
+            <td><script>document.write(document.getElementById("maxPunten").value);</script></td><!--Hoe kan ik hier de inhoud van maxPunten opvragen?-->
         </tr>
     }
 
