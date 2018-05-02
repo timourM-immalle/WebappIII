@@ -1,0 +1,42 @@
+﻿@model MyFirstWebAppII.Models.Punt
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Punt</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Leerling)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Leerling)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Klas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Klas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Min)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Min)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Max)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Max)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
