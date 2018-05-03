@@ -27,6 +27,12 @@ namespace MyFirstWebAppII
 
             services.AddDbContext<MyFirstWebAppIIContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("MyFirstWebAppIIContext")));
+
+            services.AddAuthentication().AddGoogle(googleOptions =>
+            {
+                googleOptions.ClientId = "478889081647-3p6rdl5m0f3m2paih3i98p6oimd8ncn5.apps.googleusercontent.com";
+                googleOptions.ClientSecret = "WR4atVdeFbaXD3-Si9WCwJZE";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
